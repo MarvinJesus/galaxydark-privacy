@@ -8,12 +8,13 @@
     <style>
         /* Custom colors */
         :root {
-            --primary-purple: #6a0dad;
+            --primary-purple: #9b30ff;
             --dark-purple: #4b0082;
-            --black-bg: #121212;
-            --text-light: #e0e0e0;
-            --card-bg: #1f1f1f;
-            --border-glow: rgba(106, 13, 173, 0.5);
+            --black-bg: #0d0d0d;
+            --text-light: #ffffff;
+            --text-gray: #d1d1d1;
+            --card-bg: #1e1e1e;
+            --border-glow: rgba(155, 48, 255, 0.8);
         }
 
         /* Body styling */
@@ -21,28 +22,41 @@
             background: var(--black-bg);
             color: var(--text-light);
             font-family: 'Arial', sans-serif;
+            text-align: justify;
         }
 
         /* Card design */
         .card-custom {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
             border: 2px solid var(--border-glow);
-            box-shadow: 0 0 20px var(--border-glow);
+            box-shadow: 0 0 30px var(--border-glow);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-custom:hover {
+            transform: scale(1.02);
         }
 
         .card-header {
-            background: linear-gradient(45deg, var(--primary-purple), var(--dark-purple));
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
             color: white;
             text-align: center;
             font-weight: bold;
-            font-size: 1.5rem;
-            padding: 15px;
+            font-size: 1.7rem;
+            padding: 18px;
         }
 
         .card-body {
-            padding: 30px;
+            padding: 35px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .card-body p {
+            color: var(--text-gray); /* Mayor contraste para mejor lectura */
+            font-size: 1.1rem;
         }
 
         .card-footer {
@@ -50,38 +64,40 @@
             color: white;
             text-align: center;
             padding: 15px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: bold;
         }
 
         /* List items */
         .list-group-item {
             background: transparent;
             color: var(--text-light);
-            border: none;
+            border-left: 5px solid var(--primary-purple);
+            padding: 12px 15px;
+            font-size: 1.05rem;
+            transition: background 0.3s;
         }
 
-        .list-group-item::before {
-            content: "• ";
-            color: var(--primary-purple);
-            font-weight: bold;
+        .list-group-item:hover {
+            background: rgba(155, 48, 255, 0.2);
         }
 
         /* Headings */
         h2 {
             color: var(--primary-purple);
-            margin-top: 20px;
-        }
-
-        /* Hover effect */
-        .card-custom:hover {
-            transform: scale(1.02);
-            transition: all 0.3s ease-in-out;
+            margin-top: 25px;
+            font-size: 1.6rem;
+            font-weight: bold;
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .card-body {
                 padding: 20px;
+            }
+
+            .card-header {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -90,7 +106,7 @@
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10 col-sm-12">
-                <div class="card card-custom shadow-lg">
+                <div class="card card-custom">
                     <div class="card-header">
                         Privacy Policy
                     </div>
